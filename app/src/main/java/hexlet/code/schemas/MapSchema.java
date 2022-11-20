@@ -16,12 +16,12 @@ public final class MapSchema extends BaseSchema {
         for (Map.Entry<String, BaseSchema> schema : schemas.entrySet()) {
             String key = schema.getKey();
             BaseSchema baseSchema = schema.getValue();
-            addShape(key, baseSchema);
+            addKeyCondition(key, baseSchema);
         }
         return this;
     }
 
-    private void addShape(String key, BaseSchema baseSchema) {
+    private void addKeyCondition(String key, BaseSchema baseSchema) {
         addCondition(o -> {
             Map map = (Map) o;
             if (map.containsKey(key)) {
