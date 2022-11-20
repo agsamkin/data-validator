@@ -20,7 +20,7 @@ Validator v = new Validator();
 StringSchema schema = v.string();
 
 schema.isValid(""); // true
-// Пока на вызван метод required(), null считается валидным
+// Until the required() method is called, null is valid
 schema.isValid(null); // true
 
 schema.required();
