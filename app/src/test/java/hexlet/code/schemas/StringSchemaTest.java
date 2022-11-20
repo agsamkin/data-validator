@@ -5,7 +5,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 class StringSchemaTest {
-    private static final int TEST_NUMBER = 5;
+    private static final int TEST_NUMBER_3 = 3;
+    private static final int TEST_NUMBER_5 = 5;
 
     @Test
     void isValid() {
@@ -20,7 +21,12 @@ class StringSchemaTest {
         Assertions.assertEquals(true, schema.isValid("hexlet"));
         Assertions.assertEquals(false, schema.isValid(""));
         Assertions.assertEquals(false, schema.isValid(null));
-        Assertions.assertEquals(false, schema.isValid(TEST_NUMBER));
+        Assertions.assertEquals(false, schema.isValid(TEST_NUMBER_5));
+
+        schema.minLength(TEST_NUMBER_3);
+        Assertions.assertEquals(false, schema.isValid("wh"));
+        Assertions.assertEquals(true, schema.isValid("wha"));
+        Assertions.assertEquals(true, schema.isValid("what"));
 
         schema.contains("wh");
         Assertions.assertEquals(true, schema.isValid("what does the fox say"));
