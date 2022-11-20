@@ -12,7 +12,7 @@ class NumberSchemaTest {
     private static final int TEST_NUMBER_11 = 11;
 
     @Test
-    void isValid() {
+    void isValidTest() {
         Validator v = new Validator();
         NumberSchema schema = v.number();
 

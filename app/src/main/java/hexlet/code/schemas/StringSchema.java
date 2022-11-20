@@ -6,9 +6,10 @@ public final class StringSchema extends BaseSchema {
     }
 
     @Override
-    public void required() {
+    public StringSchema required() {
         super.required();
         addCondition(o -> !((String) o).isEmpty());
+        return this;
     }
 
     public StringSchema minLength(int value) {

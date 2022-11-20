@@ -9,7 +9,7 @@ class StringSchemaTest {
     private static final int TEST_NUMBER_5 = 5;
 
     @Test
-    void isValid() {
+    void isValidTest() {
         Validator v = new Validator();
         StringSchema schema = v.string();
 

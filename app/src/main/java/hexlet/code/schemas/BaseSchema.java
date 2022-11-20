@@ -28,9 +28,12 @@ public abstract class BaseSchema {
 
     /**
      * Sets conditions for null object.
+     *
+     * @return this schema object
      */
-    public void required() {
+    public BaseSchema required() {
         required = true;
+        return this;
     }
 }
 
