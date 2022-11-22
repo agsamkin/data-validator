@@ -28,7 +28,7 @@ public final class MapSchema extends BaseSchema {
                 Object value = map.get(key);
                 return baseSchema.isValid(value);
             }
-            return true;
+            return false;
         });
     }
 }

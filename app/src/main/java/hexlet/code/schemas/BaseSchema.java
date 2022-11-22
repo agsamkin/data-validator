@@ -2,6 +2,7 @@ package hexlet.code.schemas;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.function.Predicate;
 
 public abstract class BaseSchema {
@@ -9,7 +10,7 @@ public abstract class BaseSchema {
     private final List<Predicate> conditions = new ArrayList<>();
 
     public final boolean isValid(Object object) {
-        if (object == null) {
+        if (Objects.isNull(object)) {
             return required ? false : true;
         }
 
