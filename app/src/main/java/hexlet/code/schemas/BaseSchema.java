@@ -13,14 +13,7 @@ public abstract class BaseSchema {
         if (Objects.isNull(object)) {
             return required ? false : true;
         }
-
-        for (Predicate condition : conditions) {
-            if (!condition.test(object)) {
-                return false;
-            }
-        }
-
-        return true;
+        return conditions.stream().allMatch(o -> o.test(object));
     }
 
     public final void addCondition(Predicate predicate) {
