@@ -64,6 +64,10 @@ class MapSchemaTest {
         human4.put("name", "Valya");
         human4.put("age", -TEST_NUMBER_5);
         Assertions.assertEquals(false, schema.isValid(human4));
+
+        Map<String, Object> human5 = new HashMap<>();
+        human4.put("name", "Valya");
+        Assertions.assertEquals(false, schema.isValid(human5));
     }
 }
 
