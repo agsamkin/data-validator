@@ -13,11 +13,7 @@ public final class MapSchema extends BaseSchema {
     }
 
     public MapSchema shape(Map<String, BaseSchema> schemas) {
-        for (Map.Entry<String, BaseSchema> schema : schemas.entrySet()) {
-            String key = schema.getKey();
-            BaseSchema baseSchema = schema.getValue();
-            addKeyCondition(key, baseSchema);
-        }
+        schemas.entrySet().forEach(schema -> addKeyCondition(schema.getKey(), schema.getValue()));
         return this;
     }
 
