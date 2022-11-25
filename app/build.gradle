@@ -1,6 +1,5 @@
 plugins {
     id 'java'
-    id 'application'
     id 'checkstyle'
     id 'jacoco'
 }
@@ -27,10 +26,6 @@ compileJava {
 
 tasks.withType(JavaCompile) {
     options.encoding = "UTF-8"
-}
-
-application {
-    mainClass = 'hexlet.code.App'
 }
 
 jacocoTestReport {

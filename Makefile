@@ -1,7 +1,4 @@
-.DEFAULT_GOAL := run-dist
-
-run-dist:
-	make -C app run-dist
+.DEFAULT_GOAL := build
 
 build:
 	make -C app build
